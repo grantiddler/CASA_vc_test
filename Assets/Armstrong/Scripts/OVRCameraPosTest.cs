@@ -10,7 +10,7 @@ public class OVRCameraPosTest : MonoBehaviour
 {
     [SerializeField] private OVRCameraRig overCameraRig; //initiallize camera
     public GameObject Armstrong; //initialize armstrong
-    public Vector3 offset = new Vector3(0,0.65f,0); //height offset for Armstrong's eyes
+    public Vector3 offset = new Vector3(-0.2f,0.65f,0); //height offset for Armstrong's eyes
  
 
     // Start is called before the first frame update
@@ -30,11 +30,12 @@ public class OVRCameraPosTest : MonoBehaviour
 
 
     // Update is called once per frame (use LateUpdate to change camera position after amstrong has moved)
-    void Update()
+    void LateUpdate()
     {
         Vector3 armstrongPos = Armstrong.transform.position + offset; //get armstrong's eye position, including offset of zed mini
-        Vector3 armstrongRot = Amrstrong.tansform.rotation; //rotation of armstong in world space
+        Quaternion armstrongRotQuat = Armstrong.transform.rotation; //rotation of armstrong in world space in quaternions
+        Quaternion viewAdjustement = Quaternion.AngleAxis(-90, Vector3.left); // adjustemnt for difference between armstrong frame and global frame
         overCameraRig.transform.position = armstrongPos; //sets camera position to position of zed mini
-        //overCameraRig.transform.rotation = armstrongRot; //set camera rotation to armstrong's rotation
+        overCameraRig.transform.rotation = armstrongRotQuat*viewAdjustement; //set camera rotation to armstrong's rotation (multiply quaternions to incorporate both rotations)
     }
 }
