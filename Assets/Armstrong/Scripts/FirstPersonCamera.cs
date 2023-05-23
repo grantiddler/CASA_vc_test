@@ -9,7 +9,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OVRCameraPosTest : MonoBehaviour
+public class FirstPersonCamera : MonoBehaviour
 {
     [SerializeField] private OVRCameraRig overCameraRig; //initiallize camera
     public GameObject Armstrong; //initialize armstrong
