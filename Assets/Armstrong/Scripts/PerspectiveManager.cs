@@ -7,8 +7,8 @@ public class PerspectiveManager : MonoBehaviour
     //OVR CameraRig
     public GameObject Player;
     public GameObject TrackingSpace;
-    //Legstrong Frame
-    public GameObject Legstrong;
+    //Armstrong Frame
+    public GameObject Armstrong;
 
     //Height offset when in FPV
     public Vector3 offset = new Vector3(0,1.3f,0);
@@ -32,9 +32,9 @@ public class PerspectiveManager : MonoBehaviour
     void fpv()
     {
         if (prevstate == "tpv") TrackingSpace.transform.eulerAngles = new Vector3(TrackingSpace.transform.eulerAngles.x, TrackingSpace.transform.eulerAngles.y+90, TrackingSpace.transform.eulerAngles.z);
-        //Teleport to legstrong
-        TrackingSpace.transform.eulerAngles = new Vector3(Legstrong.transform.eulerAngles.x, Legstrong.transform.eulerAngles.y+90, Legstrong.transform.eulerAngles.z);
-        Player.transform.position = Legstrong.transform.position+offset;
+        //Teleport to Armstrong
+        TrackingSpace.transform.eulerAngles = new Vector3(Armstrong.transform.eulerAngles.x, Armstrong.transform.eulerAngles.y+90, Armstrong.transform.eulerAngles.z);
+        Player.transform.position = Armstrong.transform.position+offset;
         prevstate = "fpv";
     }
 

@@ -8,6 +8,7 @@
     "com.unity.ide.vscode": "1.2.5",
     "com.unity.postprocessing": "3.2.1",
     "com.unity.recorder": "3.0.3",
+    "com.unity.remote-config": "2.1.2",
     "com.unity.render-pipelines.high-definition": "13.1.7",
     "com.unity.robotics.ros-tcp-connector": "https://github.com/Unity-Technologies/ROS-TCP-Connector.git?path=/com.unity.robotics.ros-tcp-connector",
     "com.unity.robotics.urdf-importer": "https://github.com/Unity-Technologies/URDF-Importer.git?path=/com.unity.robotics.urdf-importer#v0.5.2",

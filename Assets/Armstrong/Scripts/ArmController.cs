@@ -19,6 +19,7 @@ public class ArmController : MonoBehaviour {
         public float acceleration = 5f;// Units: m/s^2 / degree/s^2
 
         private ArticulationBody[] jointArticulationBodies;
+        private ArticulationReducedSpace[] initialPositions;
 
         void Start()
         {
@@ -49,6 +50,8 @@ public class ArmController : MonoBehaviour {
         jointArticulationBodies[7] = armstrong.transform.Find(l_finger).GetComponent<ArticulationBody>();
 
         int defDyanmicVal = 10;
+        initialPositions = new ArticulationReducedSpace[numRobotJoints];
+        
 
         for (int i = 0; i < numRobotJoints; i++){
             jointArticulationBodies[i].gameObject.AddComponent<JointControl>();
@@ -59,7 +62,29 @@ public class ArmController : MonoBehaviour {
             currentDrive.damping = damping;
             currentDrive.stiffness = stiffness;
             jointArticulationBodies[i].xDrive = currentDrive;
+            initialPositions[i] = jointArticulationBodies[i].jointPosition;
+            // Debug.Log(initialPositions[i]);
         }
+        // Debug.Log("before joint set");
+        // jointArticulationBodies[0].jointPosition = initialPositions[0];
+        // Debug.Log("Set joint)");
 
     }
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.X))
+        {
+            Debug.Log("Trying to set again");
+            // jointArticulationBodies[0].jointPosition = new ArticulationReducedSpace(10f,10f,10f,0f,20f,0f);
+            for(int i = 0; i < 6; i++)
+            {
+                ArticulationReducedSpace temp = new ArticulationReducedSpace();
+                temp = initialPositions[i];
+                Debug.Log(i);
+                jointArticulationBodies[i].jointPosition = temp;
+            }
+            Debug.Log("Reset complete");
+        }
+    }
 }
+

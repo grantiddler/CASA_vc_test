@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/ExperimentRoom/Scenes/Experiment Room.unity
+    guid: c6cffb9e7724e404e8d7f31d63f09eed
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: ff51be7d6590ba54dbcfd05aa5949560,
       type: 2}

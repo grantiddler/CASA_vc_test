@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Assembly_Antenna.SLDASM">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.013770429915415 -0.0502417283872689 0.0405975200992432"
+        rpy="0 0 0" />
+      <mass
+        value="0.157741907468955" />
+      <inertia
+        ixx="8.05644747373492E-05"
+        ixy="8.64190043273125E-22"
+        ixz="-5.57301263291372E-21"
+        iyy="8.26773949776008E-05"
+        iyz="-2.29670477083875E-21"
+        izz="6.57329257748624E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_Antenna.SLDASM/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.525490196078431 0.525490196078431 0.525490196078431 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_Antenna.SLDASM/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="antenna_link">
+    <inertial>
+      <origin
+        xyz="0 0.0622120408173393 1.38777878078145E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0182738617904036" />
+      <inertia
+        ixx="2.86998928260131E-05"
+        ixy="7.98858887631188E-27"
+        ixz="0"
+        iyy="3.96416602441184E-07"
+        iyz="-2.39204257892046E-23"
+        izz="2.86998928260131E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_Antenna.SLDASM/meshes/antenna_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_Antenna.SLDASM/meshes/antenna_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Antenna_Pole"
+    type="fixed">
+    <origin
+      xyz="0.01163 -0.073087 0.070806"
+      rpy="3.1416 1.5162 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="antenna_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="antenna_link2">
+    <inertial>
+      <origin
+        xyz="-6.93889390390723E-18 0.0622120408173393 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0182738617904036" />
+      <inertia
+        ixx="2.8699892826013E-05"
+        ixy="3.96572060743503E-22"
+        ixz="0"
+        iyy="3.96416602441184E-07"
+        iyz="-3.65278404136056E-21"
+        izz="2.8699892826013E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_Antenna.SLDASM/meshes/antenna_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_Antenna.SLDASM/meshes/antenna_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Antenna_Pole2"
+    type="fixed">
+    <origin
+      xyz="-0.03917 -0.027397 0.070806"
+      rpy="0 0.10784 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="antenna_link2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

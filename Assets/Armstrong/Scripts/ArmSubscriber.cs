@@ -30,6 +30,16 @@ public class ArmSubscriber : MonoBehaviour
         //Start from link_1 joint number and go through the remaining links
         for (int i = armStartNum; i < numRobotJoints; i++){
             var xdrive = jointArticulationBodies[i].xDrive;
+            // If either of the wrist gripper joints is selected, increase the speed of rotation
+             if( i == 12) { 
+                xdrive.target = (float)JointState.position[i]*180f/3.1415f*3f; //Convert into degrees
+            }
+            else if(i == 13) {
+                xdrive.target = (float)JointState.position[i]*180f/3.1415f*3f; //Convert into degrees
+            }
+            else {
+                xdrive.target = (float)JointState.position[i]*180f/3.1415f; //Convert into degrees
+            } 
             xdrive.target = (float)JointState.position[i]*180f/3.1415f; //Convert into degrees
             jointArticulationBodies[i].xDrive = xdrive; //Set the drive target in degrees for each motor
         }

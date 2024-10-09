@@ -44,10 +44,12 @@ public class DriveSubscriber : MonoBehaviour {
     void FixedUpdate()
     {
         //Adjust the velocity of the wheels every frame by adding torque to wheels for linear and angular velocity of rover
-        //Linear velocity is multiplied by a factor of 0.4 so that speed of virtual rover matches speed of physical rover
+        //Linear velocity is multiplied by a factor of 0.32 so that speed of virtual rover matches speed of physical rover
     
-        jointArticulationBodies[0].AddRelativeTorque(linearVelocity * SagittalGain*0.32f + angularVelocity * TransverseGain*0.7f); 
-        jointArticulationBodies[1].AddRelativeTorque(linearVelocity * SagittalGain*0.32f - angularVelocity * TransverseGain*0.7f);
+        jointArticulationBodies[0].AddRelativeTorque(linearVelocity * SagittalGain*0.32f + angularVelocity * TransverseGain*0.6f); 
+        jointArticulationBodies[1].AddRelativeTorque(linearVelocity * SagittalGain*0.32f - angularVelocity * TransverseGain*0.6f);
+
+       // Debug.Log("ArmstrongPosition" + jointArticulationBodies[0].transform.position);
     }
    
 
